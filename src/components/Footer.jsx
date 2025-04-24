@@ -16,10 +16,9 @@ export default function Footer() {
       initial={{ opacity: 0, y: 50 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 1, ease: "easeOut" }}
-      className="bg-gray-900 text-white py-10 mt-20"
+      className="bg-gray-900 text-white py-10 "
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
-        {/* Logo & Copyright */}
         <div className="text-center md:text-left">
           <h2 className="text-xl font-bold tracking-wide">Shirtly</h2>
           <p className="text-sm mt-2 text-gray-400">
@@ -27,7 +26,6 @@ export default function Footer() {
           </p>
         </div>
 
-        {/* Navigation Links */}
         <ul className="flex flex-wrap justify-center md:justify-start gap-6 text-gray-400 text-sm">
           {["Home", "Shop", "About", "Contact"].map((link) => (
             <motion.li

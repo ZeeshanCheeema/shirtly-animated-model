@@ -1,0 +1,11 @@
+Model Information:
+* title:	Lady In Black Dress
+* source:	https://sketchfab.com/3d-models/lady-in-black-dress-9a0155e57f46497daea91b20eeea45fa
+* author:	aribb (https://sketchfab.com/chantinlong1103)
+
+Model License:
+* license type:	CC-BY-NC-4.0 (http://creativecommons.org/licenses/by-nc/4.0/)
+* requirements:	Author must be credited. No commercial use.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Lady In Black Dress" (https://sketchfab.com/3d-models/lady-in-black-dress-9a0155e57f46497daea91b20eeea45fa) by aribb (https://sketchfab.com/chantinlong1103) licensed under CC-BY-NC-4.0 (http://creativecommons.org/licenses/by-nc/4.0/)

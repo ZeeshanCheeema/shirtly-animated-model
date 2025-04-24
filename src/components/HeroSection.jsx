@@ -50,11 +50,13 @@ const HeroSection = () => {
           }}
           className="w-full max-w-lg h-[400px] sm:h-[500px] relative"
         >
-          <Canvas camera={[2, 1, 3]}>
+          <Canvas>
             <ambientLight intensity={0.91} />
-            <directionalLight position={[1, 6, 6]} intensity={0.8} />
+            <directionalLight position={[6, 6, 6]} intensity={0.8} />
             <Suspense fallback={null}>
               <Model />
+              <Model2 />
+
               <ContactShadows
                 position={[0, -1.4, 0]}
                 opacity={0.35}
@@ -73,7 +75,7 @@ const HeroSection = () => {
 };
 
 const Model = () => {
-  const { scene, animations } = useGLTF("/models/shooting-men/scene.gltf");
+  const { scene, animations } = useGLTF("/models/model/scene.gltf");
   const mixerRef = useRef(null);
   const actionRef = useRef(null);
   const elapsedRef = useRef(0);
@@ -83,7 +85,7 @@ const Model = () => {
       const mixer = new THREE.AnimationMixer(scene);
       const action = mixer.clipAction(animations[0]);
 
-      action.setLoop(THREE.LoopRepeat, 1000);
+      action.setLoop(THREE.LoopRepeat, 10000);
       action.clampWhenFinished = false;
       action.enabled = true;
       action.play();
@@ -98,7 +100,7 @@ const Model = () => {
     if (mixerRef.current) {
       mixerRef.current.update(delta);
       elapsedRef.current += delta;
-      if (elapsedRef.current >= 3) {
+      if (elapsedRef.current >= 10) {
         actionRef.current?.reset().play();
         elapsedRef.current = 0;
       }
@@ -108,16 +110,54 @@ const Model = () => {
   return (
     <primitive
       object={scene}
-      scale={2.05}
-      rotation={[0.5, -0.2, 0]}
-      position={[0, -1.5, 0]}
+      scale={1.15}
+      rotation={[0.4, Math.PI, 0]}
+      position={[0, -1.4, 0]}
     />
   );
 };
 
-const model2 = () => {
-  const { scene } = useGLTF("/models/walking-men/scene.gltf");
-  return <primitive object={scene} scale={1.75} position={[0, -1, 0]} />;
+const Model2 = () => {
+  const { scene, animations } = useGLTF("/models/walking-men/scene.gltf");
+  const mixerRef = useRef(null);
+  const actionRef = useRef(null);
+  const elapsedRef = useRef(0);
+
+  useEffect(() => {
+    if (animations.length > 0) {
+      const mixer = new THREE.AnimationMixer(scene);
+      const action = mixer.clipAction(animations[1]);
+
+      action.setLoop(THREE.LoopRepeat, 10000);
+      action.clampWhenFinished = false;
+      action.enabled = true;
+      action.play();
+      action.fadeIn(0.5);
+
+      mixerRef.current = mixer;
+      actionRef.current = action;
+    }
+  }, [animations, scene]);
+
+  useFrame((_, delta) => {
+    if (mixerRef.current) {
+      mixerRef.current.update(delta);
+      elapsedRef.current += delta;
+      if (elapsedRef.current >= 4) {
+        actionRef.current?.reset().play();
+        elapsedRef.current = 0;
+      }
+    }
+  });
+
+  return (
+    <primitive
+      object={scene}
+      scale={2.15}
+      rotation={[0.4, 0.3, 0]}
+      position={[1.2, -1.4, 0]}
+    />
+  );
 };
 
 export default HeroSection;

@@ -8,9 +8,9 @@ export default function ContactPage() {
       initial={{ opacity: 0, y: 40 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8 }}
-      className="min-h-screen px-6 py-20 bg-gradient-to-br from-[#f8fafc] to-[#e0e7ff] flex flex-col items-center"
+      className="min-h-screen px-6 py-20  bg-gradient-to-br from-[#2c3e50] via-[#3a3f47] to-[#1a252f] flex flex-col items-center"
     >
-      <div className="max-w-3xl w-full bg-white p-8 rounded-lg shadow-lg">
+      <div className="max-w-3xl w-full bg-white/90 p-8 rounded-lg shadow-lg">
         <h1 className="text-4xl font-bold text-gray-800 mb-6 text-center">
           Contact Us
         </h1>

@@ -9,7 +9,7 @@ export default function AboutPage() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 1 }}
-      className="min-h-screen bg-gradient-to-br from-white via-blue-50 to-indigo-50 text-gray-800 py-16 px-6"
+      className="min-h-screen  bg-gradient-to-br from-[#2c3e50] via-[#3a3f47] to-[#1a252f] text-white py-16 px-6"
     >
       <div className="max-w-5xl mx-auto">
         <h1 className="text-4xl font-bold text-center mb-8">About Shirtly</h1>
