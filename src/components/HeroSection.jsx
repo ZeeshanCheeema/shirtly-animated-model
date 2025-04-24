@@ -126,7 +126,7 @@ const Model2 = () => {
   useEffect(() => {
     if (animations.length > 0) {
       const mixer = new THREE.AnimationMixer(scene);
-      const action = mixer.clipAction(animations[1]);
+      const action = mixer.clipAction(animations[0]);
 
       action.setLoop(THREE.LoopRepeat, 10000);
       action.clampWhenFinished = false;
@@ -143,7 +143,7 @@ const Model2 = () => {
     if (mixerRef.current) {
       mixerRef.current.update(delta);
       elapsedRef.current += delta;
-      if (elapsedRef.current >= 4) {
+      if (elapsedRef.current >= 3) {
         actionRef.current?.reset().play();
         elapsedRef.current = 0;
       }

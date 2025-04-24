@@ -34,7 +34,7 @@ const CartDetail = () => {
         Shirt Design (3D)
       </h1>
 
-      <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-10 bg-white shadow-2xl backdrop-blur-md rounded-xl p-6 relative z-10">
+      <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-10 bg-white/90 shadow-2xl backdrop-blur-md rounded-xl p-6 relative z-10">
         <div className="flex-1 flex justify-end place-items-center">
           <div className="w-full h-[350px] rounded-xl overflow-hidden shadow-md">
             <Canvas camera={{ position: [0, 0, 3], fov: 75 }}>

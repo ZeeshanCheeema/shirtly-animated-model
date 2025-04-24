@@ -46,7 +46,6 @@ export default function Navbar() {
     { name: "Home", path: "/" },
     { name: "About", path: "/about" },
     { name: "Contact", path: "/contact" },
-    { name: "Cart", path: "/cart" },
   ];
 
   return (
