@@ -10,7 +10,7 @@ export default function ProductDetail({ params }) {
   if (!product) return notFound();
 
   return (
-    <div className="min-h-screen px-4 py-10 bg-gradient-to-br from-[#f0f4ff] via-[#e0e7ff] to-[#d1d5ff]">
+    <div className="min-h-screen px-4 py-10  bg-gradient-to-br from-[#2c3e50] via-[#3a3f47] to-[#1a252f] ">
       <div className="max-w-4xl mx-auto bg-white shadow-xl rounded-lg p-6">
         <div className="flex flex-col md:flex-row gap-6">
           <div className="relative w-full md:w-1/2 h-96 rounded overflow-hidden">

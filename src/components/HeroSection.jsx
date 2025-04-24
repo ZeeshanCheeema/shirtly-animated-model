@@ -31,7 +31,7 @@ const HeroSection = () => {
             perfect fit with Shirtly.
           </p>
           <button
-            className="bg-[#4cc8f1] text-white px-6 py-3 rounded-lg hover:bg-gray-800 transition"
+            className="bg-[#98c067] text-white px-6 py-3 rounded-lg hover:bg-gray-800 transition"
             aria-label="Shop our shirt collection"
           >
             Shop Now

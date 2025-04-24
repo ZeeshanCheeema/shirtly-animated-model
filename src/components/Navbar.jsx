@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useRouter } from "next/navigation"; // <-- for app directory
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
@@ -18,7 +18,7 @@ const navVariants = {
 const itemVariants = {
   hover: {
     scale: 1.1,
-    color: "#000000",
+    color: "#f0f0f0",
     transition: { type: "spring", stiffness: 300 },
   },
   tap: { scale: 0.95 },
@@ -54,28 +54,29 @@ export default function Navbar() {
       variants={navVariants}
       initial="hidden"
       animate="visible"
-      className="w-full bg-white shadow-md sticky top-0 z-50"
+      className="w-full bg-gradient-to-r from-[#42699d] via-[#4f85c2] to-[#5fa9e9] shadow-md sticky top-0 z-50"
     >
       <div className="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+        {/* Logo */}
         <Link href="/">
           <motion.h1
             whileHover={{ scale: 1.05, color: "#1f2937" }}
             transition={{ type: "spring", stiffness: 200 }}
-            className="text-2xl font-bold text-gray-800 cursor-pointer"
+            className="text-2xl font-bold text-white drop-shadow-md cursor-pointer"
           >
             Shirtly
           </motion.h1>
         </Link>
 
         {/* Desktop Nav */}
-        <ul className="hidden md:flex space-x-6 text-gray-700 font-medium">
+        <ul className="hidden md:flex space-x-6 font-medium">
           {links.map((item) => (
             <Link key={item.name} href={item.path}>
               <motion.li
                 variants={itemVariants}
                 whileHover="hover"
                 whileTap="tap"
-                className="cursor-pointer"
+                className="cursor-pointer text-white hover:text-gray-200 transition-colors"
               >
                 {item.name}
               </motion.li>
@@ -85,15 +86,15 @@ export default function Navbar() {
 
         {/* Login Button - Desktop */}
         <motion.button
-          onClick={() => router.push("/auth")} // Navigate using router
+          onClick={() => router.push("/auth")}
           whileHover={{ scale: 1.05, backgroundColor: "#1f2937" }}
           whileTap={{ scale: 0.95 }}
-          className="hidden md:block bg-black text-white px-4 py-2 rounded transition"
+          className="hidden md:block bg-[#98c067] text-white px-4 py-2 rounded transition"
         >
           Login
         </motion.button>
 
-        {/* Mobile Menu Button */}
+        {/* Mobile Menu Toggle */}
         <div className="md:hidden">
           <button
             onClick={() => setMenuOpen((prev) => !prev)}
@@ -123,7 +124,6 @@ export default function Navbar() {
                 {item.name}
               </Link>
             ))}
-            {/* Mobile Login Button */}
             <button
               onClick={() => {
                 setMenuOpen(false);

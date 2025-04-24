@@ -15,6 +15,9 @@ const CartDetail = () => {
     White: "white",
     Blue: "#3b82f6",
     Red: "#ef4444",
+
+    Black: "#111111",
+    cream: "#98c067",
   };
 
   return (
@@ -71,7 +74,7 @@ const CartDetail = () => {
                   onClick={() => setSelectedSize(size)}
                   className={`px-4 py-2 border rounded transition ${
                     selectedSize === size
-                      ? "bg-black text-white border-black"
+                      ? "bg-[#98c067] text-white border-black"
                       : "border-gray-300 hover:bg-gray-200"
                   }`}
                 >
@@ -106,7 +109,7 @@ const CartDetail = () => {
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="mt-4 bg-black text-white py-3 px-6 rounded hover:bg-gray-800 transition"
+            className="mt-4 bg-[#98c067] text-white  py-3 px-6 rounded hover:bg-gray-800 transition"
           >
             Add to Cart
           </motion.button>

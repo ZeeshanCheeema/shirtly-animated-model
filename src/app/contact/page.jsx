@@ -54,7 +54,7 @@ export default function ContactPage() {
             whileHover={{ scale: 1.03 }}
             whileTap={{ scale: 0.97 }}
             type="submit"
-            className="bg-black text-white px-6 py-3 rounded-lg font-semibold hover:bg-gray-800 transition"
+            className="bg-[#98c067] text-white px-6 py-3 rounded-lg font-semibold hover:bg-gray-800 transition"
           >
             Send Message
           </motion.button>
