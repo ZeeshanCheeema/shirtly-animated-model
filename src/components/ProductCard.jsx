@@ -5,14 +5,14 @@ import { Star } from "lucide-react";
 
 const ProductCard = ({ image, name, price, rating }) => {
   return (
-    <div className="w-full sm:w-64 md:w-72 lg:w-80 bg-white my-2 shadow-lg rounded-xl overflow-hidden hover:shadow-xl transition-all transform hover:scale-105">
+    <div className="w-full sm:w-64 md:w-72 lg:w-80 bg-white my-2 shadow-lg rounded-xl overflow-hidden hover:shadow-xl transition-all transform hover:scale-105 cursor-pointer">
       <div className="relative w-full h-64">
         <Image
           src={image}
           alt={name}
-          layout="fill"
-          objectFit="cover"
-          className="w-full h-full object-cover"
+          width={300}
+          height={400}
+          className="w-full h-full "
         />
       </div>
       <div className="p-4">
